@@ -34,7 +34,7 @@ data class Home(val id: String): Screen {
             }
         }
 
-        Column(modifier = Modifier.fillMaxSize().background(Color(0xff130629)), horizontalAlignment = Alignment.CenterHorizontally){
+        Column(modifier = Modifier.fillMaxSize().background(Color.Gray), horizontalAlignment = Alignment.CenterHorizontally){
             LazyColumn {
                 itemsIndexed(stickerList){_,sticker ->
 
