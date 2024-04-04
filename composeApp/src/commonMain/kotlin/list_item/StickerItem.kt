@@ -34,25 +34,26 @@ fun StickerItem(
     val img = sticker.image
     val name = sticker.name
     val description = sticker.description
+    val tournament_player = sticker.tournament_player ?: ""
     val navigator = LocalNavigator.currentOrThrow
 
-    Column (modifier = Modifier.fillMaxWidth().background(Color.Gray).padding(10.dp)){
+    Column (modifier = Modifier.fillMaxWidth().background(Color.White).padding(10.dp), horizontalAlignment = Alignment.CenterHorizontally){
 
-        Row(modifier = Modifier.fillMaxWidth().background(Color.White).padding(10.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.Start){
+        Column(modifier = Modifier.fillMaxWidth().background(Color(0xffFFCA28)).padding(10.dp),horizontalAlignment = Alignment.CenterHorizontally){
 
-            Image(painter = rememberImagePainter(img!!),contentDescription = null, modifier = Modifier.width(100.dp).height(100.dp).padding(0.dp,0.dp,10.dp,0.dp), contentScale = ContentScale.Inside)
+            Image(painter = rememberImagePainter(img!!),contentDescription = null, modifier = Modifier.width(200.dp).height(200.dp).padding(0.dp,0.dp,10.dp,0.dp), contentScale = ContentScale.Fit)
 
-            Text(name!!, fontSize = 14.sp)
+            Text(name!!, fontSize = 14.sp, color = Color.White)
 
 
         }
 
-        Column (modifier = Modifier.fillMaxWidth().background(Color.White).padding(10.dp)){
+        Column (modifier = Modifier.fillMaxWidth().background(Color.Black).padding(10.dp)){
             Text(
-                description!!,
+                tournament_player,
                 fontSize = 16.sp,
                 modifier = Modifier.padding(110.dp,5.dp),
-                color = Color.Black
+                color = Color.White
             )
 
             Button(
@@ -61,17 +62,17 @@ fun StickerItem(
                         id = "StickerDetails",
                         name!!,
                         img!!,
-                        description!!
+                        tournament_player
                     ))
                 },
                 modifier = Modifier.fillMaxWidth().height(50.dp).padding(20.dp,5.dp),
                 colors = ButtonDefaults.outlinedButtonColors(
-                    backgroundColor = Color.Yellow,
+                    backgroundColor = Color.White,
                     contentColor = Color.Black
                 ),
                 border = BorderStroke(
                     2.dp,
-                    Color.Magenta
+                    Color.Black
                 )
             ){
                 Text("Details")

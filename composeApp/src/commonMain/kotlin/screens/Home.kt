@@ -11,6 +11,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import api.Server
@@ -33,7 +34,7 @@ data class Home(val id: String): Screen {
             }
         }
 
-        Column(modifier = Modifier.fillMaxSize().background(Color.Gray)){
+        Column(modifier = Modifier.fillMaxSize().background(Color(0xff130629)), horizontalAlignment = Alignment.CenterHorizontally){
             LazyColumn {
                 itemsIndexed(stickerList){_,sticker ->
 
