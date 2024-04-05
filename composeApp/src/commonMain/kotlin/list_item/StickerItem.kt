@@ -48,15 +48,15 @@ fun StickerItem(
     val tournament_player = sticker.tournament_player ?: ""
     val navigator = LocalNavigator.currentOrThrow
 
-    Column (modifier = Modifier.fillMaxWidth().background(Color.Gray).padding(10.dp), horizontalAlignment = Alignment.CenterHorizontally){
+    Column (modifier = Modifier.fillMaxWidth().background(Color.Gray).padding(0.dp,10.dp,0.dp,10.dp), horizontalAlignment = Alignment.CenterHorizontally){
 
-        Column(modifier = Modifier.fillMaxWidth().background(Color(0xff33322e)).padding(10.dp).clip(shape = RoundedCornerShape(40.dp)).clip(
+        Column(modifier = Modifier.fillMaxWidth().background(Color(0xff33322e)).padding(0.dp,5.dp,0.dp,5.dp).clip(shape = RoundedCornerShape(40.dp)).clip(
             RoundedCornerShape(40.dp)
         ),horizontalAlignment = Alignment.CenterHorizontally){
 
             Spacer(modifier = Modifier.height(20.dp))
 
-              Card( shape = RoundedCornerShape(15.dp), elevation = 10.dp, backgroundColor = Color(0xfff79b19),) {
+              Card( shape = RoundedCornerShape(15.dp), elevation = 10.dp, backgroundColor = Color(0xffadaba5),) {
                   Box(modifier = Modifier.height(200.dp)){
                       Image(painter = rememberImagePainter(img!!),contentDescription = null, modifier = Modifier.width(200.dp).height(200.dp).padding(0.dp,0.dp,10.dp,0.dp), contentScale = ContentScale.Fit)
                   }
