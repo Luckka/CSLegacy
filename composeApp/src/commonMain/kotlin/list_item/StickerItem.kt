@@ -23,7 +23,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.input.key.Key.Companion.R
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -32,6 +34,8 @@ import cafe.adriel.voyager.navigator.currentOrThrow
 import com.seiko.imageloader.rememberImagePainter
 import model.Sticker
 import screens.Details
+
+
 
 @Composable
 fun StickerItem(
@@ -52,7 +56,7 @@ fun StickerItem(
 
             Spacer(modifier = Modifier.height(20.dp))
 
-              Card( shape = RoundedCornerShape(15.dp), elevation = 10.dp, backgroundColor = Color(0xffFFCA28),) {
+              Card( shape = RoundedCornerShape(15.dp), elevation = 10.dp, backgroundColor = Color(0xfff79b19),) {
                   Box(modifier = Modifier.height(200.dp)){
                       Image(painter = rememberImagePainter(img!!),contentDescription = null, modifier = Modifier.width(200.dp).height(200.dp).padding(0.dp,0.dp,10.dp,0.dp), contentScale = ContentScale.Fit)
                   }
@@ -71,7 +75,8 @@ fun StickerItem(
                 name!!,
                 textAlign = TextAlign.Center,
                 fontSize = 16.sp,
-                modifier = Modifier.padding(110.dp,5.dp),
+                fontFamily = FontFamily.Monospace,
+               // modifier = Modifier.padding(110.dp,5.dp),
                 color = Color.White
             )
 
